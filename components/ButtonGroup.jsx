@@ -2,12 +2,15 @@ import styles from './ButtonGroup.module.css';
 import {hexToRgb, getButtonStyles} from '@/utils/buttonStyles';
 
 export default function ButtonGroup({group, onCopy}) {
+  const sanitizedGroupName = group.name.toLowerCase().replace(/\s+/g, '');
+
   return (
     <div className={styles.group}>
       <h3 className={styles.groupTitle}>{group.name}</h3>
       <div className={styles.buttons}>
         {group.variants.map((variant) => {
-          const buttonClassName = `${styles.button} ${styles[group.name.toLowerCase().replace(/\s+/g, '')]} ${styles[variant.name]}`;
+          const buttonClassName = `${styles.button} ${styles[sanitizedGroupName]} ${styles[variant.name]}`;
+          const rgbColor = hexToRgb(variant.color);
 
           return (
             <button
@@ -17,7 +20,7 @@ export default function ButtonGroup({group, onCopy}) {
               aria-label={`Copy ${variant.name} ${group.name} button style`}
               style={{
                 '--color': variant.color,
-                '--color-rgb': `${hexToRgb(variant.color)}`
+                '--color-rgb': `${rgbColor}`
               }}
             >
               {variant.name}

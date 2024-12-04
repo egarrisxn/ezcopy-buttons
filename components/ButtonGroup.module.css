@@ -21,42 +21,70 @@
   padding: 0.75rem 1.5rem;
   font-weight: 600;
   font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
   border: none;
   outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
   position: relative;
 }
 
-/* Default Buttons */
+/* ! Default Buttons */
 .default {
   background: var(--color);
   color: white;
-  border: none;
   border-radius: 8px;
   box-shadow:
     0 2px 4px rgba(0, 0, 0, 0.1),
     0 4px 8px -2px rgba(0, 0, 0, 0.1),
     inset 0 -2px 0 rgba(0, 0, 0, 0.2);
 }
+.default:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    0 8px 16px -4px rgba(0, 0, 0, 0.15),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+}
+.default:active {
+  transform: translateY(0);
+}
 
-/* Modern Gradient Buttons */
-.moderngradient {
+/* ! Rounded Buttons */
+.rounded {
+  background: var(--color);
+  color: white;
+  border-radius: 24px;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 4px 8px -2px rgba(0, 0, 0, 0.1),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+}
+.rounded:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    0 8px 16px -4px rgba(0, 0, 0, 0.15),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+}
+.rounded:active {
+  transform: translateY(0);
+}
+
+/* ! Gradient Buttons */
+.gradient {
   background: linear-gradient(
     135deg,
     var(--color) 0%,
     color-mix(in srgb, var(--color) 70%, black) 100%
   );
   color: white;
-  border: none;
   border-radius: 8px;
   box-shadow:
     0 2px 4px rgba(0, 0, 0, 0.1),
     0 4px 8px -2px rgba(0, 0, 0, 0.1),
     inset 0 -2px 0 rgba(0, 0, 0, 0.2);
 }
-
-.moderngradient:hover {
+.gradient:hover {
   transform: translateY(-2px);
   background: linear-gradient(
     135deg,
@@ -68,8 +96,7 @@
     0 8px 16px -4px rgba(0, 0, 0, 0.15),
     inset 0 -2px 0 rgba(0, 0, 0, 0.2);
 }
-
-.moderngradient:active {
+.gradient:active {
   transform: translateY(0);
   background: linear-gradient(
     135deg,
@@ -78,8 +105,50 @@
   );
 }
 
-/* Outline Glow Buttons */
-.outlineglow {
+/* ! Pop Buttons */
+.pop {
+  border: none;
+  background: var(--color);
+  color: white;
+  border-radius: 8px;
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: perspective(400px) translateZ(0) translateX(1px);
+  box-shadow:
+    0 0 0 2px rgba(var(--color-rgb), 0.3),
+    2px 8px 0 0 color-mix(in srgb, var(--color) 70%, black),
+    6px 16px 16px rgba(0, 0, 0, 0.2);
+}
+.pop:hover {
+  transform: perspective(400px) translateZ(2px) translateX(4px);
+  box-shadow:
+    0 0 0 2px rgba(var(--color-rgb), 0.3),
+    4px 10px 0 0 color-mix(in srgb, var(--color) 70%, black),
+    8px 20px 20px rgba(0, 0, 0, 0.3);
+}
+.pop:active {
+  transform: perspective(400px) translateZ(-2px) translateX(0px);
+  box-shadow:
+    0 0 0 2px rgba(var(--color-rgb), 0.3),
+    2px 8px 0 0 color-mix(in srgb, var(--color) 70%, black),
+    4px 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ! Outline Buttons */
+.outline {
+  border: 2px solid var(--color);
+  background: transparent;
+  color: var(--color);
+  border-radius: 8px;
+  box-shadow: 0 0 0 0 rgba(var(--color-rgb), 0.3);
+}
+.outline:hover {
+  box-shadow:
+    0 0 0 4px rgba(var(--color-rgb), 0.1),
+    0 0 20px rgba(var(--color-rgb), 0.1);
+}
+
+/* ! Glow Buttons */
+.glow {
   background: transparent;
   border: 2px solid var(--color);
   color: var(--color);
@@ -87,7 +156,6 @@
   box-shadow: 0 0 0 0 rgba(var(--color-rgb), 0.3);
   animation: pulse 2s infinite;
 }
-
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(var(--color-rgb), 0.3);
@@ -99,8 +167,7 @@
     box-shadow: 0 0 0 0 rgba(var(--color-rgb), 0);
   }
 }
-
-.outlineglow:hover {
+.glow:hover {
   background: var(--color);
   color: white;
   box-shadow:
@@ -108,37 +175,7 @@
     0 0 20px rgba(var(--color-rgb), 0.6);
 }
 
-/* Pop Art Buttons */
-.popart {
-  background: var(--color);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  transform: perspective(500px) translateZ(0);
-  box-shadow:
-    0 0 0 2px rgba(var(--color-rgb), 0.3),
-    0 8px 0 0 color-mix(in srgb, var(--color) 70%, black),
-    0 8px 16px rgba(0, 0, 0, 0.2);
-  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.popart:hover {
-  transform: perspective(500px) translateZ(10px);
-  box-shadow:
-    0 0 0 2px rgba(var(--color-rgb), 0.3),
-    0 12px 0 0 color-mix(in srgb, var(--color) 70%, black),
-    0 12px 24px rgba(0, 0, 0, 0.3);
-}
-
-.popart:active {
-  transform: perspective(500px) translateZ(-4px);
-  box-shadow:
-    0 0 0 2px rgba(var(--color-rgb), 0.3),
-    0 0 0 0 color-mix(in srgb, var(--color) 70%, black),
-    0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Neon Buttons */
+/* ! Neon Buttons */
 .neon {
   background: rgba(var(--color-rgb), 0.1);
   color: var(--color);
@@ -151,7 +188,6 @@
     0 0 15px rgba(var(--color-rgb), 0.2),
     0 0 20px rgba(var(--color-rgb), 0.2);
 }
-
 .neon:hover {
   background: var(--color);
   color: white;
@@ -163,24 +199,150 @@
     0 0 20px rgba(var(--color-rgb), 0.5);
 }
 
-/* Neumorphic Buttons */
-.neumorphic {
+/* ! Liquid Buttons */
+.liquid {
+  z-index: 1;
+  border: 2px solid var(--color);
+  background: none;
+  color: var(--color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.liquid::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
   background: var(--color);
-  color: #1f2937;
-  border: none;
-  border-radius: 12px;
-  transition: all 0.2s ease;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+}
+.liquid:hover {
+  color: white;
+}
+.liquid:hover::before {
+  transform: scaleY(1);
 }
 
+/* ! Glitch Buttons */
+.glitch {
+  background: transparent;
+  color: var(--color);
+  border-radius: 8px;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 4px 8px -2px rgba(0, 0, 0, 0.1),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+}
+.glitch:hover {
+  animation: glitch 0.3s linear infinite;
+}
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+/* ! Bubble Buttons*/
+.bubble {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  border-radius: 8px;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 4px 8px -2px rgba(0, 0, 0, 0.1),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+}
+.bubble:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    0 8px 16px -4px rgba(0, 0, 0, 0.15),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+}
+.bubble::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: var(--color);
+  transform: scale(0);
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+}
+.bubble:hover::before {
+  transform: scale(1);
+  border-radius: 8px;
+}
+.bubble:active {
+  transform: translateY(0);
+}
+
+/* ! Metallic Buttons */
+.metallic {
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  color: var(--color);
+  border-radius: 12px;
+  box-shadow:
+    inset 2px 2px 5px #ffffff,
+    inset -2px -2px 5px #bababa;
+}
+.metallic:hover {
+  transform: translateY(-2px);
+}
+.metallic:active {
+  transform: translateY(0);
+}
+
+/* ! Glass Buttons */
+.glass {
+  border: 1px solid rgba(var(--color-rgb), 0.4);
+  background: rgba(var(--color-rgb), 0.4);
+  color: #1f2937;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(var(--color-rgb), 0.3);
+  backdrop-filter: blur(8px);
+}
+.glass:hover {
+  background: rgba(var(--color-rgb), 0.5);
+  box-shadow: 0 6px 8px -1px rgba(var(--color-rgb), 0.4);
+  transform: translateY(-2px);
+}
+.glass:active {
+  transform: translateY(0);
+}
+
+/* ! Neumorphic Buttons */
+.neumorphic {
+  background: var(--color);
+  border-radius: 12px;
+}
 .neumorphic.light,
 .neumorphic.gray {
+  color: #1f2937;
   box-shadow:
     12px 12px 24px rgba(0, 0, 0, 0.2),
     -12px -12px 24px rgba(255, 255, 255, 0.9),
     inset 0 0 0 rgba(0, 0, 0, 0.2),
     inset 0 0 0 rgba(255, 255, 255, 0.9);
 }
-
 .neumorphic.light:hover,
 .neumorphic.gray:hover {
   box-shadow:
@@ -189,7 +351,6 @@
     inset 0 0 0 rgba(0, 0, 0, 0.2),
     inset 0 0 0 rgba(255, 255, 255, 0.9);
 }
-
 .neumorphic.light:active,
 .neumorphic.gray:active {
   box-shadow:
@@ -198,17 +359,16 @@
     inset 12px 12px 24px rgba(0, 0, 0, 0.2),
     inset -12px -12px 24px rgba(255, 255, 255, 0.9);
 }
-
 .neumorphic.dark,
 .neumorphic.purple,
 .neumorphic.blue {
+  color: white;
   box-shadow:
     12px 12px 24px rgba(0, 0, 0, 0.5),
     -12px -12px 24px rgba(255, 255, 255, 0.1),
     inset 0 0 0 rgba(0, 0, 0, 0.5),
     inset 0 0 0 rgba(255, 255, 255, 0.1);
 }
-
 .neumorphic.dark:hover,
 .neumorphic.purple:hover,
 .neumorphic.blue:hover {
@@ -218,7 +378,6 @@
     inset 0 0 0 rgba(0, 0, 0, 0.5),
     inset 0 0 0 rgba(255, 255, 255, 0.1);
 }
-
 .neumorphic.dark:active,
 .neumorphic.purple:active,
 .neumorphic.blue:active {
@@ -229,13 +388,13 @@
     inset -12px -12px 24px rgba(255, 255, 255, 0.1);
 }
 
-/* Focus styles for all buttons */
+/* ! Focus styles for all buttons */
 .button:focus-visible {
   outline: 2px solid #000;
   outline-offset: 2px;
 }
 
-/* Responsive adjustments */
+/* ! Responsive adjustments */
 @media (max-width: 768px) {
   .button {
     width: 100%;
