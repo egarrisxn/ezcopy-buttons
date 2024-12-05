@@ -1,5 +1,6 @@
 import styles from './ButtonGroup.module.css';
-import {hexToRgb, getButtonStyles} from '@/utils/buttonStyles';
+import {hexToRgb} from '@/utils/btnHelpers';
+import {getButtonStyles} from '@/utils/btnStyles';
 
 export default function ButtonGroup({group, onCopy}) {
   const sanitizedGroupName = group.name.toLowerCase().replace(/\s+/g, '');
@@ -11,7 +12,6 @@ export default function ButtonGroup({group, onCopy}) {
         {group.variants.map((variant) => {
           const buttonClassName = `${styles.button} ${styles[sanitizedGroupName]} ${styles[variant.name]}`;
           const rgbColor = hexToRgb(variant.color);
-
           return (
             <button
               key={variant.name}

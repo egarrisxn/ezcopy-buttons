@@ -1,7 +1,7 @@
 'use client';
 import styles from './ButtonGrid.module.css';
 import ButtonGroup from './ButtonGroup';
-import {buttonGroups} from '@/utils/buttonTypes';
+import {buttonGroups} from '@/utils/btnTypes';
 
 export default function ButtonGrid() {
   const copyButtonCode = (code) => {
