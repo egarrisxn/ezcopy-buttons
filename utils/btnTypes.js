@@ -198,5 +198,25 @@ export const buttonGroups = [
       {name: 'purple', color: '#6366f1'},
       {name: 'blue', color: '#3b82f6'}
     ]
+  },
+  {
+    name: 'Success',
+    variants: [
+      {name: 'light', color: '#ffffff'},
+      {name: 'gray', color: '#d9d9d9'},
+      {name: 'dark', color: '#1f2937'},
+      {name: 'purple', color: '#6366f1'},
+      {name: 'blue', color: '#3b82f6'}
+    ]
+  },
+  {
+    name: 'Error',
+    variants: [
+      {name: 'light', color: '#ffffff'},
+      {name: 'gray', color: '#d9d9d9'},
+      {name: 'dark', color: '#1f2937'},
+      {name: 'purple', color: '#6366f1'},
+      {name: 'blue', color: '#3b82f6'}
+    ]
   }
 ];

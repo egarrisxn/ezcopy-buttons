@@ -18,6 +18,7 @@
 }
 
 .button {
+  position: relative;
   padding: 0.75rem 1.5rem;
   font-weight: 600;
   font-size: 1rem;
@@ -25,7 +26,6 @@
   outline: none;
   cursor: pointer;
   transition: all 0.2s ease;
-  position: relative;
 }
 
 /* ! Default Buttons */
@@ -587,7 +587,6 @@
 .loading {
   background: var(--color);
   border-radius: 8px;
-  pointer-events: none;
   padding-left: 6px;
   padding-right: 32px;
 }
@@ -616,19 +615,97 @@
   overflow: hidden;
 }
 .progress::before {
-  content: '';
   position: absolute;
+  content: '';
   left: 0;
   bottom: 0;
   height: 2.5px;
   width: 100%;
-  background: currentColor;
+  background: var(--color);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 1s ease;
 }
 .progress:hover::before {
   transform: scaleX(1);
+}
+
+/* ! Progress Buttons */
+.progress {
+  border: 1px solid var(--color);
+  background-color: transparent;
+  color: var(--color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.progress::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  height: 2.5px;
+  width: 100%;
+  background: var(--color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s ease;
+}
+.progress:hover::before {
+  transform: scaleX(1);
+}
+
+/* ! Success Buttons */
+.success {
+  border: 1px solid var(--color);
+  background: transparent;
+  color: var(--color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.success::before {
+  position: absolute;
+  content: '✓';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color);
+  color: #01eb01;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+.success:hover::before {
+  transform: translateY(0);
+}
+
+/* ! Error buttons */
+.error {
+  border: 1px solid var(--color);
+  background: transparent;
+  color: var(--color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.error::before {
+  position: absolute;
+  content: '×';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #ff0000;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+.error:hover::before {
+  transform: translateY(0);
 }
 
 /* ! Focus styles for all buttons */

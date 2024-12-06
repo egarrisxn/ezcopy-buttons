@@ -110,37 +110,46 @@ const getWaveStyle = (color) => {
     padding: 0.75rem 1.5rem;
     font-weight: 600;
     font-size: 1rem;
-    border: 2px solid ${color};
+    border: none;
     outline: none;
     cursor: pointer;
     transition: all 0.2s ease;
-    width: 100%;
     background: transparent;
-    color: ${color};
+    background: #000;
+    color: #fff;
     border-radius: 8px;
     overflow: hidden;
   }
-  .button::before {
+  .button::before,
+  .button::after {
     position: absolute;
+    color: #fff;
     z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .button::before {
     content: '';
     background: ${color};
-    width: 0;
-    height: 800%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-    transition: 0.5s ease;
-    display: block;
+    color: #fff;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
   }
   .button:hover {
-    color: #fff;
+      transform: translateY(-2px);
+      color: ${color};
   }
   .button:hover::before {
-  width: 105%;
+    transform: translate3d(100%, 0, 0);
   }
   .button:active {
-  transform: translateY(2px);
+    transform: translateY(2px);
   }`;
 };
 
@@ -349,6 +358,8 @@ const getNeonStyle = (color) => {
 const getLiquidStyle = (color) => {
   return `
   .button {
+    position: relative;
+    z-index: 1;
     padding: 0.75rem 1.5rem;
     font-weight: 600;
     font-size: 1rem;
@@ -357,8 +368,6 @@ const getLiquidStyle = (color) => {
     color: ${color};
     border-radius: 8px;
     overflow: hidden;
-    position: relative;
-    z-index: 1;
   }
   .button::before {
     content: '';
@@ -507,6 +516,7 @@ const getBubbleStyle = (color) => {
   const beforeColor = adjustColor(color, -20);
   return `
   .button {
+     position: relative;
     padding: 0.75rem 1.5rem;
     font-weight: 600;
     font-size: 1rem;
@@ -514,7 +524,6 @@ const getBubbleStyle = (color) => {
     outline: none;
     cursor: pointer;
     transition: all 0.2s ease;
-    position: relative;
     z-index: 1;
     background: transparent;
     border-radius: 8px;
@@ -570,6 +579,7 @@ const getAppearanceStyle = (color) => {
     transform: translateY(-2px);
     outline-color: rgba(255, 255, 255, 0);
     outline-offset: 15px;
+    color: ${color};
     box-shadow: 0 0 0 2px ${color};
   }
   .button:active {
@@ -668,6 +678,146 @@ const getNeumorphicStyle = (color) => {
     }`;
 };
 
+const getLoadingStyle = (color) => {
+  return `
+  .button {
+    position: relative;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    pointer-events: none;
+    padding-left: 6px;
+    padding-right: 32px;
+    transition: all 0.2s ease;
+    background: ${color};
+    color: ${isLightColor(color) ? '#1f2937' : 'white'};
+  }
+  .button::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    margin-left: 12px;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+  }
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }`;
+};
+
+const getProgressStyle = (color) => {
+  return `
+  .button {
+    position: relative;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid ${color};
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: transparent;
+    color: ${color};
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .button::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 2.5px;
+    width: 100%;
+    background: ${color};
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s ease;
+  }
+  .button:hover::before {
+  transform: scaleX(1);
+  }`;
+};
+
+const getSuccessStyle = (color) => {
+  return `
+  .button {
+    position: relative;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid ${color};
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: transparent;
+    color: ${color};
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .button::before {
+    position: absolute;
+    content: '✓';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: ${color};
+    color: #01eb01;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  .button:hover::before {
+    transform: translateY(0);
+  }`;
+};
+
+const getErrorStyle = (color) => {
+  return `
+  .button {
+    position: relative;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid ${color};
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: transparent;
+    color: ${color};
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .button::before {
+    position: absolute;
+    content: '×';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #ff0000;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  .button:hover::before {
+    transform: translateY(0);
+  }`;
+};
+
 export const getButtonStyles = (groupType, variant) => {
   const styleGenerators = {
     Default: getDefaultStyle,
@@ -687,7 +837,11 @@ export const getButtonStyles = (groupType, variant) => {
     Appearance: getAppearanceStyle,
     Metallic: getMetallicStyle,
     Glass: getGlassStyle,
-    Neumorphic: getNeumorphicStyle
+    Neumorphic: getNeumorphicStyle,
+    Loading: getLoadingStyle,
+    Progress: getProgressStyle,
+    Success: getSuccessStyle,
+    Error: getErrorStyle
   };
 
   const generator = styleGenerators[groupType];
