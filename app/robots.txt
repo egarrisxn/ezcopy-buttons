@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /private/
+Sitemap: https://ezcopy-buttons.vercel.app/sitemap.xml
+Host: https://ezcopy-buttons.vercel.app
