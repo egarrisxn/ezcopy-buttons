@@ -15,7 +15,7 @@ export function adjustColor(hex, amount, opacity = 1) {
 
 export function hexToRgb(hex) {
   if (!/^#([0-9A-F]{3}|[0-9A-F]{6})$/i.test(hex)) {
-    throw new Error('Invalid HEX color');
+    throw new Error("Invalid HEX color");
   }
   const r = parseInt(hex.slice(1, 3), 16);
   const g = parseInt(hex.slice(3, 5), 16);
@@ -25,7 +25,7 @@ export function hexToRgb(hex) {
 
 export function isLightColor(hex) {
   if (!/^#([0-9A-F]{3}|[0-9A-F]{6})$/i.test(hex)) {
-    throw new Error('Invalid HEX color');
+    throw new Error("Invalid HEX color");
   }
   const r = parseInt(hex.slice(1, 3), 16);
   const g = parseInt(hex.slice(3, 5), 16);

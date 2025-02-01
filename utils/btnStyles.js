@@ -1,4 +1,4 @@
-import {adjustColor, hexToRgb, isLightColor} from './btnHelpers';
+import {adjustColor, hexToRgb, isLightColor} from "./btnHelpers";
 
 const getDefaultStyle = (color) => {
   const shadowColor1 = adjustColor(color, -10, 0.1);
@@ -464,8 +464,8 @@ const getNightlifeStyle = (color) => {
 };
 
 const getGlitchStyle = (color) => {
-  const shadowColor1 = `rgba(0, 0, 0, 0.1)`;
-  const shadowColor2 = `rgba(0, 0, 0, 0.2)`;
+  const shadowColor1 = "rgba(0, 0, 0, 0.1)";
+  const shadowColor2 = "rgba(0, 0, 0, 0.2)";
   return `
   .button {
     padding: 0.75rem 1.5rem;
@@ -510,9 +510,9 @@ const getGlitchStyle = (color) => {
 
 const getBubbleStyle = (color) => {
   const shadowColor = adjustColor(color, 0, 0.2);
-  const hoverShadowColor1 = 'rgba(0, 0, 0, 0.15)';
-  const hoverShadowColor2 = 'rgba(0, 0, 0, 0.15)';
-  const insetShadowColor = 'rgba(0, 0, 0, 0.2)';
+  const hoverShadowColor1 = "rgba(0, 0, 0, 0.15)";
+  const hoverShadowColor2 = "rgba(0, 0, 0, 0.15)";
+  const insetShadowColor = "rgba(0, 0, 0, 0.2)";
   const beforeColor = adjustColor(color, -20);
   return `
   .button {
@@ -624,7 +624,7 @@ const getGlassStyle = (color) => {
     cursor: pointer;
     transition: all 0.2s ease;
     background: rgba(${rgbColor}, 0.4);
-    color: ${isLightColor(color) ? '#1f2937' : 'white'};
+    color: ${isLightColor(color) ? "#1f2937" : "white"};
     box-shadow: 0 4px 6px -1px rgba(${rgbColor}, 0.3);
     backdrop-filter: blur(8px);
   }
@@ -640,10 +640,8 @@ const getGlassStyle = (color) => {
 
 const getNeumorphicStyle = (color) => {
   const isLight = isLightColor(color);
-  const shadowColor1 = isLight ? 'rgba(0, 0, 0, 0.2)' : 'rgba(0, 0, 0, 0.5)';
-  const shadowColor2 = isLight
-    ? 'rgba(255, 255, 255, 0.9)'
-    : 'rgba(255, 255, 255, 0.1)';
+  const shadowColor1 = isLight ? "rgba(0, 0, 0, 0.2)" : "rgba(0, 0, 0, 0.5)";
+  const shadowColor2 = isLight ? "rgba(255, 255, 255, 0.9)" : "rgba(255, 255, 255, 0.1)";
   return `
     .button {
       padding: 0.75rem 1.5rem;
@@ -654,7 +652,7 @@ const getNeumorphicStyle = (color) => {
       cursor: pointer;
       transition: all 0.2s ease;
       background: ${color};
-      color: ${isLight ? '#1f2937' : 'white'};
+      color: ${isLight ? "#1f2937" : "white"};
       border-radius: 12px;
       box-shadow: 
         12px 12px 24px ${shadowColor1},
@@ -693,7 +691,7 @@ const getLoadingStyle = (color) => {
     padding-right: 32px;
     transition: all 0.2s ease;
     background: ${color};
-    color: ${isLightColor(color) ? '#1f2937' : 'white'};
+    color: ${isLightColor(color) ? "#1f2937" : "white"};
   }
   .button::after {
     content: '';
@@ -841,7 +839,7 @@ export const getButtonStyles = (groupType, variant) => {
     Loading: getLoadingStyle,
     Progress: getProgressStyle,
     Success: getSuccessStyle,
-    Error: getErrorStyle
+    Error: getErrorStyle,
   };
 
   const generator = styleGenerators[groupType];
