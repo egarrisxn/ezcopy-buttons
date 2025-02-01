@@ -1,5 +1,7 @@
 # EZCOPY BUTTONS
 
+![ezcopy](https://github.com/user-attachments/assets/2661ca5a-d55e-4afa-aa65-049df8ff8595)
+
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) ![GitHub repo size](https://img.shields.io/github/repo-size/egarrisxn/ezcopy-buttons) ![GitHub last commit](https://img.shields.io/github/last-commit/egarrisxn/ezcopy-buttons)
 
 ## 🚀 Overview
