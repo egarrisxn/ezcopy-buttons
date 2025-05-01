@@ -14,7 +14,6 @@
 - **React** – Dynamic and reusable UI components
 - **JavaScript** – Core functionality
 - **Vercel** – Seamless deployment and hosting
-- **More!** – Additional tools and libraries may be included
 
 ## 🚀 Getting Started
 
