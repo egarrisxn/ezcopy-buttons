@@ -19,28 +19,11 @@ export const metadata = {
   referrer: "origin-when-cross-origin",
   keywords: ["Buttons, Copy, Paste, CSS, Next.js, NEXT, JavaScript, JS, React, Vercel"],
   creator: "https://egxo.dev.",
-  manifest: "/manifest.json",
-  robots: {
-    index: true,
-    follow: false,
-    googleBot: {
-      index: true,
-      follow: false,
-    },
-  },
   openGraph: {
     title: "EZ COPY",
     description: "Buttons, Copy, Easy, Next.js, TailwindCSS, React, Vercel",
-    url: "https://devbuild-resume.vercel.app/",
+    url: "https://ezcopy-buttons.vercel.app/",
     siteName: "ezcopybuttons",
-    images: [
-      {
-        url: "/opengraph-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Buttons, Copy, Easy, Next.js, TailwindCSS, React, Vercel",
-      },
-    ],
     type: "website",
     locale: "en_US",
   },
@@ -50,28 +33,15 @@ export const metadata = {
     description: "Buttons, Copy, Easy, Next.js, TailwindCSS, React, Vercel",
     creator: "@eg__xo",
     site: "@eg__xo",
-    images: [
-      {
-        url: "/twitter-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Buttons, Copy, Easy, Next.js, TailwindCSS, React, Vercel",
-      },
-    ],
-  },
-  icons: {
-    icon: [
-      {url: "/favicon.ico", sizes: "32x32", type: "image/x-icon"},
-      {url: "/icon.png", sizes: "96x96", type: "image/png"},
-      {url: "/icon.svg", type: "image/svg+xml"},
-    ],
-    apple: [{url: "/apple-icon.png", sizes: "180x180", type: "image/png"}],
   },
 };
 
 export default function RootLayout({children}) {
   return (
     <html lang="en">
+          <head>
+        <meta name="apple-mobile-web-app-title" content='EZ COPY' />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
     </html>
   );
