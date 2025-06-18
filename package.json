@@ -22,21 +22,26 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "lint:fix": "eslint --fix",
-    "format": "prettier --check .",
-    "format:fix": "prettier --write .",
-    "fix:all": "eslint --fix && prettier --write ."
+    "format": "prettier --check \"**/*.{js,jsx,ts,tsx,mdx}\" --cache",
+    "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
+    "next": "15.1.6",
     "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "next": "15.1.6"
+    "react-dom": "19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
     "eslint": "^9.17.0",
     "eslint-config-next": "15.1.6",
     "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "prettier": "^3.4.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "unrs-resolver"
+    ]
   }
 }

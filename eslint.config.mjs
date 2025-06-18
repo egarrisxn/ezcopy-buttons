@@ -12,11 +12,8 @@ const compat = new FlatCompat({
 /** @type {import('eslint').Linter.Config[]} */
 const eslintConfig = [
   ...compat.config({
-    extends: ["next/core-web-vitals"],
-    rules: {
-      semi: ["error"],
-      quotes: ["error", "double"],
-    },
+    extends: ["next/core-web-vitals", "prettier"],
+    rules: {},
   }),
   {
     ignores: ["**/node_modules/", ".git/", ".next/"],
