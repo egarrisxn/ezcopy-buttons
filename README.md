@@ -1,4 +1,4 @@
-# EZCOPY BUTTONS 2024
+# EZCOPY BUTTONS
 
 ![ezcopy](https://github.com/user-attachments/assets/2661ca5a-d55e-4afa-aa65-049df8ff8595)
 
