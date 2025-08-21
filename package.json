@@ -6,15 +6,6 @@
   "author": "Ethan G",
   "license": "MIT",
   "private": true,
-  "keywords": [
-    "next",
-    "nextjs",
-    "eslint",
-    "react",
-    "js",
-    "javascript",
-    "vercel"
-  ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prebuild": "pnpm run lint",
