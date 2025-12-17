@@ -17,7 +17,7 @@
     "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
-    "next": "15.5.7",
+    "next": "15.5.9",
     "react": "19.2.1",
     "react-dom": "19.2.1"
   },
